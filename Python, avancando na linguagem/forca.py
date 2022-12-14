@@ -22,8 +22,12 @@ while not acertou and not enforcou:
     if palavra_secreta.find(chute) == -1:
         print('Não há essa letra na palavra')
 
-    if palavra[0, len(palavra)] == palavra_secreta:
-        acertou = True
+    acertando = 0
+    for i in range(len(palavra)):
+        if palavra[i] != '':
+            acertando += 1
+        if acertando == len(palavra_secreta):
+            acertou = True
 
 palavra_completa = ''
 for i in range(len(palavra_secreta)):
